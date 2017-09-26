@@ -13,7 +13,7 @@ Public Class Form1
         pnlBrowser.Controls.Add(_browser)
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btnMSDN_Click(sender As Object, e As EventArgs) Handles btnMSDN.Click
         _browser.Load("https://msdn.com")
     End Sub
 

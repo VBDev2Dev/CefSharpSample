@@ -23,38 +23,40 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.pnlBrowser = New System.Windows.Forms.Panel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.pnlActions = New System.Windows.Forms.Panel()
+        Me.btnMSDN = New System.Windows.Forms.Button()
         Me.pnlBrowser.SuspendLayout()
-        Me.Panel1.SuspendLayout()
+        Me.pnlActions.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlBrowser
         '
-        Me.pnlBrowser.Controls.Add(Me.Panel1)
+        Me.pnlBrowser.Controls.Add(Me.pnlActions)
         Me.pnlBrowser.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlBrowser.Location = New System.Drawing.Point(0, 0)
         Me.pnlBrowser.Name = "pnlBrowser"
         Me.pnlBrowser.Size = New System.Drawing.Size(1016, 610)
         Me.pnlBrowser.TabIndex = 0
         '
-        'Panel1
+        'pnlActions
         '
-        Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 510)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1016, 100)
-        Me.Panel1.TabIndex = 0
+        Me.pnlActions.Controls.Add(Me.btnMSDN)
+        Me.pnlActions.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.pnlActions.Location = New System.Drawing.Point(0, 510)
+        Me.pnlActions.Name = "pnlActions"
+        Me.pnlActions.Size = New System.Drawing.Size(1016, 100)
+        Me.pnlActions.TabIndex = 0
         '
-        'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(416, 31)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "MSDN"
-        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'btnMSDN
+        '
+        Me.btnMSDN.Location = New System.Drawing.Point(416, 31)
+        Me.btnMSDN.Name = "btnMSDN"
+        Me.btnMSDN.Size = New System.Drawing.Size(75, 23)
+        Me.btnMSDN.TabIndex = 0
+        Me.btnMSDN.Text = "MSDN"
+        Me.btnMSDN.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -65,12 +67,12 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.pnlBrowser.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
+        Me.pnlActions.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents pnlBrowser As Panel
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents pnlActions As Panel
+    Friend WithEvents btnMSDN As Button
 End Class
