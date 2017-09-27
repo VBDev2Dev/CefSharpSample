@@ -1,5 +1,5 @@
 ﻿Imports CefSharp.WinForms
-Public Class Form1
+Public Class frmBrowser
 
     Private ReadOnly _browser As ChromiumWebBrowser
 
