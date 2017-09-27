@@ -1,7 +1,8 @@
-﻿Imports CefSharp.WinForms
+﻿Imports CefSharp
+Imports CefSharp.WinForms
 Public Class frmBrowser
 
-    Private ReadOnly _browser As ChromiumWebBrowser
+    Private WithEvents _browser As ChromiumWebBrowser
 
     Public Sub New()
 
@@ -10,6 +11,8 @@ Public Class frmBrowser
 
         ' Add any initialization after the InitializeComponent() call.
         _browser = New ChromiumWebBrowser("http://google.com")
+
+
         pnlBrowser.Controls.Add(_browser)
     End Sub
 
@@ -21,4 +24,20 @@ Public Class frmBrowser
         _browser.Dispose()
         CefSharp.Cef.Shutdown()
     End Sub
+    Private Sub _browser_LoadingStateChanged(sender As Object, e As LoadingStateChangedEventArgs) Handles _browser.LoadingStateChanged
+
+        Dim xtn = Sub()
+                      pnlActions.Enabled = Not e.IsLoading
+                  End Sub
+        If InvokeRequired Then
+            Invoke(Sub()
+                       xtn()
+                   End Sub
+                )
+        Else
+            xtn.Invoke
+        End If
+
+    End Sub
+
 End Class
