@@ -24,6 +24,15 @@ Public Class frmBrowser
         _browser.Dispose()
         CefSharp.Cef.Shutdown()
     End Sub
+
+    Private Async Sub btnH1s_ClickAsync(sender As Object, e As EventArgs) Handles btnH1s.Click
+        _browser.ShowDevTools
+        Dim finder As New JQueryElementFinder(_browser.GetBrowser)
+        Dim tmp = Await finder.FindElement("div")
+        Stop
+        Console.WriteLine(tmp)
+    End Sub
+
     Private Sub _browser_LoadingStateChanged(sender As Object, e As LoadingStateChangedEventArgs) Handles _browser.LoadingStateChanged
 
         Dim xtn = Sub()
@@ -40,4 +49,13 @@ Public Class frmBrowser
 
     End Sub
 
+    Private Sub btnTest_Click(sender As Object, e As EventArgs) Handles btnTest.Click
+
+        Dim pth As String = IO.Path.Combine(My.Application.Info.DirectoryPath, "TestPage.html")
+        _browser.Load(pth)
+    End Sub
+
+    Private Sub _browser_ConsoleMessage(sender As Object, e As ConsoleMessageEventArgs) Handles _browser.ConsoleMessage
+        Console.WriteLine(e.Message)
+    End Sub
 End Class

@@ -24,7 +24,9 @@ Partial Class frmBrowser
     Private Sub InitializeComponent()
         Me.pnlBrowser = New System.Windows.Forms.Panel()
         Me.pnlActions = New System.Windows.Forms.Panel()
+        Me.btnH1s = New System.Windows.Forms.Button()
         Me.btnMSDN = New System.Windows.Forms.Button()
+        Me.btnTest = New System.Windows.Forms.Button()
         Me.pnlBrowser.SuspendLayout()
         Me.pnlActions.SuspendLayout()
         Me.SuspendLayout()
@@ -40,6 +42,8 @@ Partial Class frmBrowser
         '
         'pnlActions
         '
+        Me.pnlActions.Controls.Add(Me.btnTest)
+        Me.pnlActions.Controls.Add(Me.btnH1s)
         Me.pnlActions.Controls.Add(Me.btnMSDN)
         Me.pnlActions.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.pnlActions.Location = New System.Drawing.Point(0, 510)
@@ -47,7 +51,14 @@ Partial Class frmBrowser
         Me.pnlActions.Size = New System.Drawing.Size(1016, 100)
         Me.pnlActions.TabIndex = 0
         '
+        'btnH1s
         '
+        Me.btnH1s.Location = New System.Drawing.Point(597, 22)
+        Me.btnH1s.Name = "btnH1s"
+        Me.btnH1s.Size = New System.Drawing.Size(75, 23)
+        Me.btnH1s.TabIndex = 1
+        Me.btnH1s.Text = "Find H1's"
+        Me.btnH1s.UseVisualStyleBackColor = True
         '
         'btnMSDN
         '
@@ -75,4 +86,6 @@ Partial Class frmBrowser
     Friend WithEvents pnlBrowser As Panel
     Friend WithEvents pnlActions As Panel
     Friend WithEvents btnMSDN As Button
+    Friend WithEvents btnH1s As Button
+    Friend WithEvents btnTest As Button
 End Class
